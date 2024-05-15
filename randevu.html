@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randevu Sayfası</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .randevu-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .poliklinik-button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .poliklinik-button:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .poliklinik-list {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .poliklinik-list div {
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .randevu-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .randevu-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="randevu-container">
+        <h2>Randevu Al</h2>
+        <div class="form-group">
+            <label for="tarih">Tarih:</label>
+            <input type="date" id="tarih" name="tarih">
+        </div>
+        <div class="form-group">
+            <label for="saat">Saat:</label>
+            <input type="time" id="saat" name="saat">
+        </div>
+        <div class="form-group">
+            <label for="poliklinik">Poliklinik:</label>
+            <button class="poliklinik-button" type="button" onclick="togglePoliklinik()">Poliklinik Seç</button>
+        </div>
+        <div class="poliklinik-list" id="poliklinikList">
+            <div>Poliklinik 1</div>
+            <div>Poliklinik 2</div>
+            <div>Poliklinik 3</div>
+        </div>
+        <div class="form-group">
+            <label for="doktor">Doktor:</label>
+            <select id="doktor" name="doktor">
+                <option value="doktor1">Doktor 1</option>
+                <option value="doktor2">Doktor 2</option>
+                <option value="doktor3">Doktor 3</option>
+            </select>
+        </div>
+        <button class="randevu-button" type="button" onclick="window.location.href='randevu-onay.html'">Randevu
+            Al</button>
+    </div>
+
+    <script>
+        function togglePoliklinik() {
+            const poliklinikList = document.getElementById('poliklinikList');
+            if (poliklinikList.style.display === 'none' || poliklinikList.style.display === '') {
+                poliklinikList.style.display = 'block';
+            } else {
+                poliklinikList.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

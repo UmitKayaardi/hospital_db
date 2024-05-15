@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçete Sayfası</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .recete-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .recete-onay-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .recete-onay-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="recete-container">
+        <h2>Reçete Bilgileri</h2>
+        <div class="form-group">
+            <label for="recete_tarihi">Reçete Tarihi:</label>
+            <input type="date" id="recete_tarihi" name="recete_tarihi">
+        </div>
+        <div class="form-group">
+            <label for="hasta_adi_soyadi">Hastanın Adı Soyadı:</label>
+            <input type="text" id="hasta_adi_soyadi" name="hasta_adi_soyadi">
+        </div>
+        <div class="form-group">
+            <label for="hasta_tanisi">Hastanın Tanısı:</label>
+            <textarea id="hasta_tanisi" name="hasta_tanisi" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="gerekli_ilac">Gerekli İlaç:</label>
+            <input type="text" id="gerekli_ilac" name="gerekli_ilac">
+        </div>
+        <div class="form-group">
+            <label for="doktor_adi_soyadi">Doktorun Adı Soyadı:</label>
+            <input type="text" id="doktor_adi_soyadi" name="doktor_adi_soyadi">
+        </div>
+        <button class="recete-onay-button" onclick="window.location.href='recete-onay.html'">Reçeteyi Onayla</button>
+    </div>
+</body>
+
+</html>
